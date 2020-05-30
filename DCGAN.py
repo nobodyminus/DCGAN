@@ -179,7 +179,7 @@ class GAN:
         iters = 0
         print('Start training')
         for epoch in range(n_epochs):
-            for i, data in enumerate(self.dataloader, 0):
+            for i, data in enumerate(self.dataloader):
                 # Update network, train real batch
                 self.netD.zero_grad()
                 real_cpu = data[0].to(self.device)
@@ -267,7 +267,7 @@ class GAN:
 
 
 if __name__ == '__main__':
-    manual_seed = 999
+    manual_seed = 0
     dataroot = 'celeba'
     workers = 0
     batch_size = 128
